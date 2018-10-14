@@ -1,0 +1,25 @@
+Overview video 
+1. https://www.youtube.com/watch?v=mdqR7oy8N-s
+
+
+
+Implementation of RMI videos 
+
+1. Basic implementation using eclipse and execution via command line 
+https://www.youtube.com/watch?v=3fq4AdaiGFA
+
+2. More advanced implementation using eclipse and RMI plugin 
+https://www.youtube.com/watch?v=ILeAeFZOkMI
+
+
+
+Official Docs 
+
+1. Overview 
+https://docs.oracle.com/javase/tutorial/rmi/overview.html
+
+2.. Setting up java rmi client - server 
+
+https://docs.oracle.com/javase/7/docs/technotes/guides/rmi/hello/hello-world.html
+
+
