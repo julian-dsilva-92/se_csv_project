@@ -10,6 +10,7 @@ public class adminServerstart {
 		String serverIp;  //changes according to your server ip
 		
 		
+		@SuppressWarnings("unused")
 		String os;
 		Scanner s1 = new Scanner(System.in);
 		
@@ -20,6 +21,7 @@ public class adminServerstart {
 			System.out.print("Windows OS detected. In order for RMI server to establish connection with clients please enter your current IPV4 address: ");
 			serverIp=s1.nextLine();
 			System.setProperty("java.rmi.server.hostname", serverIp); 
+			s1.close();
 			}
 			
 			try {

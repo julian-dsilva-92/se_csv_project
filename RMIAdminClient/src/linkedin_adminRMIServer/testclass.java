@@ -10,7 +10,7 @@ public class testclass {
 	//client app 
 
 	public static void main (String args []) throws MalformedURLException, RemoteException, NotBoundException {
-		String ip="192.168.1.104";  //ip of server machine 
+		String ip="localhost";  //ip of server machine 
 		
 		ClassLoader cl= testclass.class.getClassLoader();
 		try {
