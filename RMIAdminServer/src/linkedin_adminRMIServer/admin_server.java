@@ -27,7 +27,7 @@ public class admin_server extends UnicastRemoteObject implements adminServerinte
 			Connection con = null;
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/localDb","root","adminuser" ); //value changes if DB changed
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/localdb","root","adminuser" ); //value changes if DB changed
 				System.out.println("Database connected");
 			} catch (Exception ex) {
 				System.out.println("Error connection to Database" + ex);
