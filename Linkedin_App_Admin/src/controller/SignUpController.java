@@ -45,8 +45,12 @@ public class SignUpController extends RMIClientInitializer implements Initializa
 
 
 	public void signUp() throws MalformedURLException, RemoteException, NotBoundException { //rmi method
+				/////////////////////////********* RMI CODE START *********////////////////////////
+		
 		RMILoader();
-		adminServerinterface client = (adminServerinterface) Naming.lookup("rmi://"+ getIp() +"/binded");  //calling registerUser method from server 
+		try {
+		adminServerinterface client = (adminServerinterface) Naming.lookup("rmi://"+ getIp() +"/binded"); //connecting to RMI Server
+		System.out.println("Successfully Connected to Admin module's RMI Server");	//if connection successful 
 		if (client.registerUser(firstNameSUField.getText(), lastNameSUField.getText(),emailSUField.getText(), "rmitest5", passwordSUField.getText())) {
 			System.out.println("User Registered Succesfully");
 			//load sign in page 
@@ -54,13 +58,19 @@ public class SignUpController extends RMIClientInitializer implements Initializa
 		else {
 			showAlert2();  //username not available 
 		}
-
+		} catch (Exception e) {
+		 System.out.println ("Could not Connect to RMI Server. Make sure rmi registry is running on server machine and Server IP is correct. ");
+		 System.out.println(e);
+			
+		}
 		/*	System.out.println("FirstName: " + firstNameSUField.getText());
 			System.out.println("LastName: " + lastNameSUField.getText());
 			System.out.println("Email: " + emailSUField.getText());
 			System.out.println("Password: " + passwordSUField.getText());
 		 */
-
+		
+		
+			/////////////////////////********* RMI CODE END *********////////////////////////
 	}
 
 	public void showAlert2() {

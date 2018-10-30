@@ -52,16 +52,23 @@ public class MainWindowController extends RMIClientInitializer implements Initia
 
 
 	public void signIn() throws MalformedURLException, RemoteException, NotBoundException { //login rmi method 
-
+				/////////////////////////********* RMI CODE START *********////////////////////////
+		
 		RMILoader();
+		try {
 		adminServerinterface client = (adminServerinterface) Naming.lookup("rmi://"+ getIp() +"/binded");  //calling loginuser method from admin server 
+		System.out.println("Successfully Connected to Admin module's RMI Server");
 		if (client.loginuser(userNameField.getText(),passwordField.getText())) {
 			System.out.println("User Login Succesfully");
 		}
 		else {
 			showAlert2();  //username not available 
 		}
-
+		} catch (Exception e) {
+			 System.out.println ("Could not Connect to RMI Server. Make sure rmi registry is running on server machine and Server IP is correct. ");
+			 System.out.println(e);
+		}
+		
 		/*
 			System.out.println("Username: " + userNameField.getText());
 			System.out.println("Password: " + passwordField.getText());
@@ -82,7 +89,9 @@ public class MainWindowController extends RMIClientInitializer implements Initia
 
 
 		 */
+		
 	}
+					/////////////////////////********* RMI CODE END *********////////////////////////
 
 	public void signUp() {
 		System.out.println("Username: " + userNameField.getText());

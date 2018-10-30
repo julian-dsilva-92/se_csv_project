@@ -1,12 +1,18 @@
 package linkedin_adminRMIServer;
 
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 
 import controller.SignUpController;
 
 public class RMIClientInitializer {
+	
 
-	private static String ip ="192.168.1.67";   //ip of RMI server running on windows 
+
+	private static String ip;   //ip of RMI server 
 	
 	
 	public void RMILoader() {  //allows jvm communications 
@@ -26,7 +32,7 @@ public class RMIClientInitializer {
 				System.out.println("Could not connect to server " + e);
 			}
 	}
-
+	
 
 	public static String getIp() {
 		return ip;
