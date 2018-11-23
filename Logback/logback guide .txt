@@ -1,0 +1,13 @@
+
+How to Log 
+https://stackify.com/java-logging-best-practices/
+
+
+Log4j vs Logback 
+
+https://logback.qos.ch/reasonsToSwitch.html
+
+Videos 
+https://www.youtube.com/watch?v=C5Wj0pQ0bGs (quick logbook basics) 
+
+https://www.youtube.com/watch?v=oiaEP57nsmI (Logback implementation) 
