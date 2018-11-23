@@ -60,6 +60,8 @@ public class MainWindowController extends RMIClientInitializer implements Initia
 		System.out.println("Successfully Connected to Admin module's RMI Server");
 		if (client.loginuser(userNameField.getText(),passwordField.getText())) {
 			System.out.println("User Login Succesfully");
+			
+			System.out.println(client.getKey()); //returns primary key of logged in user  
 		}
 		else {
 			showAlert2();  //username not available 
